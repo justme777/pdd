@@ -65,9 +65,10 @@
                 }else{
                     clearAnswerSelection();
                 }
-            }else{
-                alert('К сожалению, нужная картинка еще не загружена в систему');
             }
+            if($('#clip').attr('src')==null){ 
+                alert('К сожалению, нужная картинка еще не загружена в систему');
+             }
         }
 
         function getParameterByName(name) {
