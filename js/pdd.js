@@ -54,14 +54,16 @@
             $('#clip').css('top','-'+y+'px');
         }
         
-        function showQuestion(qNumber){
-            $('#lblQuestionNumber').text('Вопрос '+qNumber);
-            var path = getImagePath(qNumber);
+        function showQuestion(number){
+            qNumber = number;
+            $('#lblQuestionNumber').text('Вопрос '+number);
+            document.qNumber = number;
+            var path = getImagePath(number);
             if(isFileExist(path)==true)
             {
                 $('#clip').attr('src',path);
-                setPosition(qNumber);
-                var myAnswer = getMyAnswer(qNumber);
+                setPosition(number);
+                var myAnswer = getMyAnswer(number);
                 if(myAnswer){
                     selectMyAnswer(myAnswer);
                 }else{
