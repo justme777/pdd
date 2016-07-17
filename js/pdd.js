@@ -233,6 +233,7 @@
         }
 
         function showResults(){
+            var rightanswersCount=0;
             $('#tbl_results').find('tr').remove();
             //$('#myTable').append('<tr><td>my data</td><td>more data</td></tr>');
             var row = '<tr><td>Вопросы</td>';
@@ -249,6 +250,7 @@
                 var val =myanswers[i];
                 if(val==null){ val="-";}
                 if(val==answers[i]){
+                    rightanswersCount++;
                     row+="<td onclick='showQuestion("+(i+1)+")' style='cursor:pointer;color:green;'>";
                 }else{
                     row+="<td onclick='showQuestion("+(i+1)+")' style='color:red;cursor:pointer;'>";
@@ -267,6 +269,11 @@
             }
             row+='</tr>';
             $('#tbl_results').append(row);
+
+            var prcnt = ((rightanswersCount)/(myanswers.length))*100;
+            $('#sp_myanswers_count').text(myanswers.length);
+            $('#sp_rightanswers_count').text(rightanswersCount+"("+prcnt+"%)");
+            $('#sp_wronganswers_count').text(myanswers.length-rightanswersCount);           
             $('#div_myanswers').css('display','block');
         }
 

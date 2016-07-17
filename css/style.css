@@ -64,3 +64,11 @@
 #progress-bar{
     margin-top:10px;
 }
+
+#sp_rightanswers_count{
+    color: green;  
+}
+
+#sp_wronganswers_count{
+    color: red;
+}
