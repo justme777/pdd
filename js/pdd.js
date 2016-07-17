@@ -13,7 +13,6 @@
         showArrows(false);
         
         
-
         function getImagePath(qNumber){
             var imgNumber = Math.floor((qNumber-1)/8)+1;
             return "images/"+sectionNumber+"/"+imgNumber+".jpg";
@@ -87,6 +86,13 @@
             var selectedAnswer = getSelectedAnswer();
             if(selectedAnswer!="0"){
                 setMyAnswer(myanswers,qNumber,selectedAnswer);
+                if($('#cbIsCheckingOn').prop('checked'))
+                {
+                    if(selectedAnswer!=answers[qNumber]){
+                        alert('Неправильно. Ответ: '+answers[qNumber]);
+                        return;
+                    }
+                }
                 qNumber++;
                 if(qNumber>answers.length){ 
                     qNumber=answers.length;
@@ -215,13 +221,7 @@
                 progressBar.attr('aria-valuenow',val);
                 progressBar.css('width',val+'px');   
             }
-            myanswers[qNumber-1]=myAnswer;  
-            if($('#cbIsCheckingOn').prop('checked'))
-            {
-                if(myAnswer!=answers[qNumber-1]){
-                    alert('Неправильно. Ответ: '+answers[qNumber-1]);
-                }
-            } 
+            myanswers[qNumber-1]=myAnswer;   
         }
 
         function getMyAnswer(qNumber){
