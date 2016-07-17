@@ -2,6 +2,7 @@
         if(sectionNumber==''){sectionNumber=1;}
         $('#section'+sectionNumber).addClass('active');
         var answers = getAnswers(sectionNumber);
+        loadProgressBar();
         var myanswers=[];
 
         var qNumber = getParameterByName('qNumber');
@@ -10,6 +11,7 @@
         showQuestion(qNumber);
         
         showArrows(false);
+        
 
         function getImagePath(qNumber){
             var imgNumber = Math.floor((qNumber-1)/8)+1;
@@ -193,7 +195,7 @@
 
         function getSelectedAnswer(){
             selectedAnswer="0";
-            for(var i=1;i<=5;i++){
+            for(var i=1;i<=6;i++){
                 if($('#option'+i).prop('checked')==true){
                     selectedAnswer = i;
                     break;
@@ -203,7 +205,15 @@
         }
 
         function setMyAnswer(myanswers, qNumber, myAnswer){
+            if(myanswers[qNumber-1]==null){
+                var progressBar = $('#progress-bar .progress-bar');
+                var val = progressBar.attr('aria-valuenow');
+                val++;
+                progressBar.attr('aria-valuenow',val);
+                progressBar.css('width',val+'px');   
+            }
             myanswers[qNumber-1]=myAnswer;
+            
         }
 
         function getMyAnswer(qNumber){
@@ -215,7 +225,7 @@
         }
 
         function clearAnswerSelection(){
-            for(var i=1;i<=5;i++){
+            for(var i=1;i<=6;i++){
                 $('#option'+i).prop('checked',false);
             }
         }
@@ -281,4 +291,9 @@
             http.open('HEAD', url, false);
             http.send();
             return http.status!=404;
+        }
+
+        function loadProgressBar(){
+            var progressBar = $('#progress-bar .progress-bar');
+            progressBar.attr('aria-valuemax', answers.length);
         }
