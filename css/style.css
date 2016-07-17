@@ -72,3 +72,8 @@
 #sp_wronganswers_count{
     color: red;
 }
+
+#isCheckingOn{
+    float: right;
+    margin-right:10px;
+}

@@ -12,6 +12,7 @@
         
         showArrows(false);
         
+        
 
         function getImagePath(qNumber){
             var imgNumber = Math.floor((qNumber-1)/8)+1;
@@ -214,13 +215,20 @@
                 progressBar.attr('aria-valuenow',val);
                 progressBar.css('width',val+'px');   
             }
-            myanswers[qNumber-1]=myAnswer;
-            
+            myanswers[qNumber-1]=myAnswer;  
+            if($('#cbIsCheckingOn').prop('checked'))
+            {
+                if(myAnswer!=answers[qNumber-1]){
+                    alert('Неправильно. Ответ: '+answers[qNumber-1]);
+                }
+            } 
         }
 
         function getMyAnswer(qNumber){
             return myanswers[qNumber-1];
         }
+
+        
 
         function selectMyAnswer(myAnswer){
             $('#option'+myAnswer).prop('checked',true);
