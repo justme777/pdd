@@ -88,8 +88,8 @@
                 setMyAnswer(myanswers,qNumber,selectedAnswer);
                 if($('#cbIsCheckingOn').prop('checked'))
                 {
-                    if(selectedAnswer!=answers[qNumber]){
-                        alert('Неправильно. Ответ: '+answers[qNumber]);
+                    if(selectedAnswer!=answers[qNumber-1]){
+                        alert('Неправильно. Ответ: '+answers[qNumber-1]);
                         return;
                     }
                 }
@@ -98,7 +98,7 @@
                     qNumber=answers.length;
                     showResults();
              }
-                showQuestion(qNumber);
+            showQuestion(qNumber);
             }else{
                 alert("Вы не ответили на вопрос");
             }
