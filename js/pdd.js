@@ -191,6 +191,12 @@
         function getAnswers(sectionNumber){
             switch(sectionNumber){
                 case "13": return "114322322313421211313153314331212131321231332233125131111121114221241323311331333113341213312141323213";break;
+                case "14": return "32122321";
+                case "15": return "22313132";
+                case "16": return "11533213";
+                case "17": return "34442121";
+                case "18": return "14312122122334234123";
+                case "19": return "31232314423424224311322327";
             }
         }
 
