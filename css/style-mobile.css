@@ -1,0 +1,79 @@
+.img_container {
+    margin:0 auto;
+    width:450px;
+    height:450px;
+    overflow:hidden;
+    position: relative;
+    border: 1px solid black;
+    margin-top:15px;
+}
+#clip {
+    position: absolute;
+    width: 1500px;
+}
+
+#div_buttons{
+    width:150px;
+    margin: 0 auto;
+    margin-top:8px;
+    margin-bottom:8px;
+}
+
+#arrows{
+   z-index:9999999;
+   position:absolute; 
+   top:169px;
+   left:169px;
+   width: 113px;
+   height: 113px;
+}
+
+.arrow{
+    width:23px;
+}
+
+.border{
+    border:1px solid red;
+}
+
+#div_answers{
+    width:350px;
+    margin:0 auto;
+    margin-top:15px;
+}
+
+#btnCount{
+    float:right;
+}
+
+#lblQuestionNumber{
+    margin-top:8px;
+}
+
+#div_myanswers{
+    padding:3px;
+    width:100%;
+    overflow-x: auto;
+    display: none;
+}
+
+#tbl_results tr td{
+    padding: 3px;
+}
+
+#progress-bar{
+    margin-top:8px;
+}
+
+#sp_rightanswers_count{
+    color: green;  
+}
+
+#sp_wronganswers_count{
+    color: red;
+}
+
+#isCheckingOn{
+    float: right;
+    margin-right:8px;
+}

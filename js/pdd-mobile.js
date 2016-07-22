@@ -29,16 +29,16 @@
         }
 
         function getX(rowNumber){
-            var width = 600;
-            var dX = 150;
+            var width = 450;
+            var dX = 100;
             var x0 = 0;
             return x0+(rowNumber-1)*(width-dX);
         }
 
         function getY(colNumber){
-            var h = 600;
-            var dY = 30;
-            var y0 = 150;
+            var h = 450;
+            var dY = 22;
+            var y0 = 113;
             return y0+(colNumber-1)*(h-dY);
         }
 
