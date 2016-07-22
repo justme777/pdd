@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Правила дорожного движения РК 2016</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/shop-item.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">ПДД</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a target="_blank" href="https://github.com/justme777/pdd">О проекте</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://pit-stop.kz/pdd/pdd_pravila">Правила</a>
+                    </li>
+                    <li>
+                        <a href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <p class="lead">Разделы</p>
+                <div class="list-group">
+                    <a id="section1" href="index.html?section=1" class="list-group-item">Раздел 1</a>
+                    <a id="section13" href="index.html?section=13" class="list-group-item">Раздел 13</a>
+                    <a id="section14" href="index.html?section=14" class="list-group-item">Раздел 14</a>
+                    <a id="section15" href="index.html?section=15" class="list-group-item">Раздел 15</a>
+                    <a id="section16" href="index.html?section=16" class="list-group-item">Раздел 16</a>
+                    <a id="section17" href="index.html?section=17" class="list-group-item">Раздел 17</a>
+                    <a id="section18" href="index.html?section=18" class="list-group-item">Раздел 18</a>
+                    <a id="section19" href="index.html?section=19" class="list-group-item">Раздел 19</a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="thumbnail" style="padding:20px;width:100%; overflow:auto;">
+                        <div style="border-bottom:1px solid #dddddd;">
+                            <label id="lblQuestionNumber"></label>
+                            <button id="btnCount" onclick="showResults()" class="btn btn-default btn-sm">Показать результаты</button> 
+                            <label id="isCheckingOn"><input id="cbIsCheckingOn" type="checkbox">Включить проверку</label>
+                        </div>
+                        
+                        <div class="img_container">
+                            <img id="clip" style="width:2000px;"/>
+                            <table id="arrows">
+                                <tr>
+                                    <td></td>
+                                    <td class="td_arrow"><img id="img_up" src="images/up.png" class="arrow" /></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td  class="td_arrow"><img id="img_left" src="images/left.png" class="arrow" /></td>
+                                    <td></td>
+                                    <td  class="td_arrow"><img id="img_right" src="images/right.png" class="arrow" /></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td  class="td_arrow"><img id="img_down" src="images/down.png" class="arrow" /></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="progress-bar" class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="" style="width:0px;" >
+                                <span class="sr-only">70% Complete</span>
+                            </div>
+                        </div>
+                        <div id="div_answers">
+                            <label>Ваш ответ: </label>
+                            <label  class="radio-inline"><input id="option1" type="radio" name="optradio">1</label>
+                            <label  class="radio-inline"><input id="option2" type="radio" name="optradio">2</label>
+                            <label  class="radio-inline"><input id="option3" type="radio" name="optradio">3</label>
+                            <label  class="radio-inline"><input id="option4" type="radio" name="optradio">4</label>
+                            <label  class="radio-inline"><input id="option5" type="radio" name="optradio">5</label>
+                            <label  class="radio-inline"><input id="option6" type="radio" name="optradio">6</label>
+                        </div>
+                        
+                        <div id="div_buttons">
+                            <input type="button" class="btn btn-primary" value="Назад" onclick="showPrevQuestion()" />
+                            <input type="button" class="btn btn-primary" value="Вперед" onclick="showNextQuestion()" />
+                        </div>
+                        
+                        <div id="div_myanswers">
+                            <label>Результаты</label>
+                            <table id="tbl_results" class="table-bordered">
+                                
+                            </table>
+                            <table>
+                                <tr>
+                                    <td>Все отвечено:</td>
+                                    <td><span id="sp_myanswers_count"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Правильные:</td>
+                                    <td><span id="sp_rightanswers_count"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Ошибки:</td>
+                                    <td><span id="sp_wronganswers_count"></span></td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/pdd-mobile.js"></script>
+</body>
+
+</html>
